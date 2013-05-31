@@ -1,0 +1,26 @@
+<?php
+$this->title = "My Albums";
+$this->headTitle()->prepend($this->title);
+?>
+<p><a href="<?php echo $this->url(array('controller'=>'test',
+'action'=>'add'));?>">Add new album</a></p>
+<table border="1" align="center">
+<tr>
+  <th>Task Name</th>      
+  <th>Task Assign To</th>  
+  <th>Action</th>     
+</tr>
+   <?php
+    foreach($this->paginator as $record){ ?>
+    <tr> 
+   <td><?php echo $record->artist?></td>
+  <td><?php echo $record->title?></td> 
+  <td>
+    <a href="edit/id/<?php echo $record->id?>">Edit</a>
+    |
+    <a href="del/id/<?php echo $record->id?>">Delete</a>      
+  </td>   
+</tr> 
+   <?php } ?>
+  </table>
+   <?php echo $this->paginationControl($this->paginator, 'Sliding', 'controls.phtml'); ?>

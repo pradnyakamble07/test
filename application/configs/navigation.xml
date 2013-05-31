@@ -1,0 +1,15 @@
+<?xml  version="1.0" encoding="utf-8" ?>
+<config>
+    <nav>
+        <logout>
+            <label>logout</label>
+            <controller>Authentication</controller>
+            <action>logout</action>
+        </logout>
+        <login>
+            <label>login</label>
+            <controller>Authentication</controller>
+            <action>login</action>
+        </login>
+    </nav>
+</config>
